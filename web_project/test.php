@@ -1,9 +1,16 @@
 <?php
-    $url = "https://www.youtube";
-    $st = shell_exec("python youtube_api.py " .$url);
-    $d = json_decode($st, true);
-    if($d == ""){
-        echo "pass";
-    }
-    echo $st;
+// Start the session
+session_start();
 ?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$_SESSION["favcolor"] = "hello";
+echo $_SESSION["favcolor"];
+echo '<script>sessionStorage.getItem("train_date");</script>';
+?>
+
+</body>
+</html>

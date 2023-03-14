@@ -82,10 +82,15 @@
             width: 20px;
             margin-left: 8px;
         }
+        #loading_bar{
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <div class="youtube_linkbar">
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <form method="post" onsubmit="loading()" action="<?php echo $_SERVER['PHP_SELF'];?>">
             <input class="yt_url_link_bar" type="text" name="yt_url_link" placeholder="https://www.youtube.com/watch?v=Example" pattern="https://.*" required>
             <select class="yt_ch_selector" name="format">
               <option value="Video">Video</option>
@@ -95,6 +100,14 @@
     </form>
 </div>
 <br>
+<div id="loading_bar">
+    <img src="icon/loading.gif">
+</div>
+<script>
+    function loading(){
+        document.getElementById("loading_bar").style ="display : flex";
+    }
+</script>
 <?php
     if(isset($_POST['yt_url_link'])&&$_POST['yt_url_link'] != ""){
         $data = shell_exec("python youtube_api.py " .$_POST['yt_url_link']);
