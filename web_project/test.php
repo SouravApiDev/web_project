@@ -1,16 +1,10 @@
 <?php
-// Start the session
-session_start();
-?>
-<!DOCTYPE html>
-<html>
-<body>
-
-<?php
-$_SESSION["favcolor"] = "hello";
-echo $_SESSION["favcolor"];
-echo '<script>sessionStorage.getItem("train_date");</script>';
+$var =" hello data this is sourav ";
+function printMessage() {
+    echo "Hello World!";
+}
 ?>
 
-</body>
-</html>
+<script>
+    document.write("<?php printMessage(); echo $var; ?>");
+</script>
