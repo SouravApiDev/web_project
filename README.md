@@ -16,4 +16,4 @@ I am use raspberry pi 3b+
 <br>
 <img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/youtube.png" style="height: 320px; width: 560px; border-radius: 45px;">
 <br>
-<img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/demo.jpeg" style="height: 320px; width: 560px; border-radius: 45px;">
+<img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/yt.png" style="height: 320px; width: 560px; border-radius: 45px;">
