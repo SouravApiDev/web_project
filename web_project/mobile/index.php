@@ -105,10 +105,7 @@
             margin-bottom: 10px;
             width: 400px;
         }
-        a:link { text-decoration: none; }
-        a:visited { text-decoration: none; }
-        a:hover { text-decoration: none; }
-        a:active { text-decoration: none; }
+        a:link, a:visited, a:hover, a:active{ text-decoration: none; }
     </style>
 </head>
 <body bgcolor="#1c1c1c">
@@ -153,7 +150,7 @@ else {
     echo '<div id="home_yt" style="width: 90%"><div id="home_yt_results">';
     for($i=0; $i<sizeof($responce['items']); $i++){
         $time_temp = explode("T", $responce['items'][$i]['snippet']['publishTime']);
-        echo '<a href="player.php?videoid='.$responce['items'][$i]['id']['videoId'].'&title='.$responce['items'][$i]['snippet']['title'].'"><div class="home_yt_results"><img class="thumbnails_img_home" src="'.$responce['items'][$i]['snippet']['thumbnails']['high']['url'].'"><div class="title_home">'.$responce['items'][$i]['snippet']['title'].'</div>
+        echo '<a onclick="dec()" href="player.php?videoid='.$responce['items'][$i]['id']['videoId'].'&title='.$responce['items'][$i]['snippet']['title'].'"><div class="home_yt_results"><img class="thumbnails_img_home" src="'.$responce['items'][$i]['snippet']['thumbnails']['high']['url'].'"><div class="title_home">'.$responce['items'][$i]['snippet']['title'].'</div>
         <div class="channel_name_home">'.$responce['items'][$i]['snippet']['channelTitle'].'</div><div class="video-publish-time_home">'.$time_temp[0].'</div></div></a>';
         }
         echo '</div></div>';
