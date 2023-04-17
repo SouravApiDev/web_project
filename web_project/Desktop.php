@@ -120,14 +120,14 @@
             
             for($i=0; $i<sizeof($decord['videos_url']['formats']); $i++){
                 if($decord['videos_url']['formats'][$i]['qualityLabel'] !="144p"){
-                echo '<a href="'.$decord['videos_url']['formats'][$i]['url'].'"><button class="Download_btn" style="width: 120px" type="button">'.$decord['videos_url']['formats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['formats'][$i]['fps'].'</button></a><br>';
+                echo '<a href="'.$decord['videos_url']['formats'][$i]['url'].'&title='.$decord["title"].'"><button class="Download_btn" style="width: 120px" type="button">'.$decord['videos_url']['formats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['formats'][$i]['fps'].'</button></a><br>';
                 }
             }
             
             for($i=0; $i<sizeof($decord['videos_url']['adaptiveFormats']); $i++){
                 $data = str_split($decord['videos_url']['adaptiveFormats'][$i]['mimeType']);
                 if($data[0] == "v"&&$v_not_rep != $decord['videos_url']['adaptiveFormats'][$i]['qualityLabel']){
-                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'"><button class="Download_btn" style="width: 160px" type="button">'.$decord['videos_url']['adaptiveFormats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['adaptiveFormats'][$i]['fps'].'<img class="mute_icon" src="icon/mute.png"></button></a><br>';
+                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'&title='.$decord["title"].'"><button class="Download_btn" style="width: 160px" type="button">'.$decord['videos_url']['adaptiveFormats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['adaptiveFormats'][$i]['fps'].'<img class="mute_icon" src="icon/mute.png"></button></a><br>';
                     $v_not_rep = $decord['videos_url']['adaptiveFormats'][$i]['qualityLabel'];
                 }
             }
@@ -137,7 +137,7 @@
                 $audio_q = explode("_",$decord['videos_url']['adaptiveFormats'][$i]['audioQuality']);
                 $data = str_split($decord['videos_url']['adaptiveFormats'][$i]['mimeType']);
                 if($data[0] == "a"||$v_not_rep != $audio_q[2]){
-                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'"><button class="Download_btn" style="width: 150px" type="button">'.$audio_q[2].' Bitrate:'.floatval($decord['videos_url']['adaptiveFormats'][$i]['bitrate'])/1000.0.'khz</button></a><br>';
+                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'&title='.$decord["title"].'"><button class="Download_btn" style="width: 150px" type="button">'.$audio_q[2].' Bitrate:'.floatval($decord['videos_url']['adaptiveFormats'][$i]['bitrate'])/1000.0.'khz</button></a><br>';
                     $v_not_rep = $audio_q[2];
                 }
             }

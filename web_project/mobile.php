@@ -123,14 +123,14 @@
             
             for($i=0; $i<sizeof($decord['videos_url']['formats']); $i++){
                 if($decord['videos_url']['formats'][$i]['qualityLabel'] !="144p"){
-                echo '<a href="?play='.$decord['videos_url']['formats'][$i]['url'].'"><button onClick="down_call_sc()" class="Download_btn" style="width: 150px" type="button">'.$decord['videos_url']['formats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['formats'][$i]['fps'].'</button></a><br>';
+                echo '<a href="'.$decord['videos_url']['formats'][$i]['url'].'&title='.$decord["title"].'"><button onClick="down_call_sc()" class="Download_btn" style="width: 150px" type="button">'.$decord['videos_url']['formats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['formats'][$i]['fps'].'</button></a><br>';
                 }
             }
             
             for($i=0; $i<sizeof($decord['videos_url']['adaptiveFormats']); $i++){
                 $data = str_split($decord['videos_url']['adaptiveFormats'][$i]['mimeType']);
                 if($data[0] == "v"&&$v_not_rep != $decord['videos_url']['adaptiveFormats'][$i]['qualityLabel']){
-                    echo '<a href="?play='.$decord['videos_url']['adaptiveFormats'][$i]['url'].'"><button class="Download_btn" style="width: 210px" type="button">'.$decord['videos_url']['adaptiveFormats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['adaptiveFormats'][$i]['fps'].'<img class="mute_icon" src="icon/mute.png"></button></a><br>';
+                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'&title='.$decord["title"].'"><button class="Download_btn" style="width: 210px" type="button">'.$decord['videos_url']['adaptiveFormats'][$i]['qualityLabel'].' Fps:'.$decord['videos_url']['adaptiveFormats'][$i]['fps'].'<img class="mute_icon" src="icon/mute.png"></button></a><br>';
                     $v_not_rep = $decord['videos_url']['adaptiveFormats'][$i]['qualityLabel'];
                 }
             }
@@ -140,7 +140,7 @@
                 $audio_q = explode("_",$decord['videos_url']['adaptiveFormats'][$i]['audioQuality']);
                 $data = str_split($decord['videos_url']['adaptiveFormats'][$i]['mimeType']);
                 if($data[0] == "a"||$v_not_rep != $audio_q[2]){
-                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'" Download><button class="Download_btn" style="width: 220px" type="button">'.$audio_q[2].' Bitrate:'.floatval($decord['videos_url']['adaptiveFormats'][$i]['bitrate'])/1000.0.'khz</button></a><br>';
+                    echo '<a href="'.$decord['videos_url']['adaptiveFormats'][$i]['url'].'&title='.$decord["title"].'"><button class="Download_btn" style="width: 220px" type="button">'.$audio_q[2].' Bitrate:'.floatval($decord['videos_url']['adaptiveFormats'][$i]['bitrate'])/1000.0.'khz</button></a><br>';
                     $v_not_rep = $audio_q[2];
                 }
             }
@@ -149,9 +149,6 @@
         else{
             echo '<div class="center_com"><div class="error_window"><div id="error_404"><center><h1 style="color: white">Please Enter Correct Link</h1></center><center><h4 style="color: white">https://www.youtube.com/watch?v=example</h4></center><center><h2 style="color: white">OR</h2></center><center><h4 style="color: white">https://youtu.be/example</h4></center></div></div></div>';
         }
-    }
-    if(isset($_GET['play'])){
-        echo '<video width="320" height="240" controls><source src="'.$_GET['play'].'" type="video/mp4"></video>';
     }
 ?>
 <script>

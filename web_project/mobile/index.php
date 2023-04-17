@@ -1,5 +1,6 @@
 <head>
     <title>Youtube Clone</title>
+     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
     <style>
     .search{
             display: flex;
