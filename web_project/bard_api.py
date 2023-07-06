@@ -3,7 +3,7 @@ import os
 import sys
 import requests
 # set your __Secure-1PSID value to key
-token = 'XwiIk91u9POPpCQYlPZt4-xdzAyMT4KdHGSxI-I303naZepqfZdrLVfrxzCFw_OOJz8Jtg.'
+token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 input_text_array = sys.argv[1].split("%")
 input_text=""
 for x in input_text_array:
