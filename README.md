@@ -12,13 +12,16 @@ test code type user@root:~ $ python3<br>
 #root access server</h1>
 I am use raspberry pi 3b+
 <br>
+https://stdi.cloud
 <img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/demo.jpeg" style="height: 320px; width: 560px; border-radius: 45px;">
 <br>
+https://youtubeclone.stdi.cloud
 <img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/youtube.png" style="height: 320px; width: 560px; border-radius: 45px;">
 <br>
 <img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/yt.png" style="height: 320px; width: 560px; border-radius: 45px;">
 <br>
 <img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/player_clone_youtube.png" style="height: 320px; width: 560px; border-radius: 45px;">
 <br>
+https://chat.stdi.cloud
 <img src="https://raw.githubusercontent.com/SouravApiDev/web_project/main/chat_bot.png" style="height: 320px; width: 560px; border-radius: 45px;">
 <h>Made By Sourav<h>
