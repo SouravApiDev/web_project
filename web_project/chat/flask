@@ -1,3 +1,5 @@
+##need Server Must Full_ROOT_DATA_STACK_____
+
 from flask import Flask, request
 from bardapi import Bard
 import os
